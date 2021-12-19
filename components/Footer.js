@@ -1,11 +1,18 @@
-import styles from './Footer.module.css'
+import { useStyletron } from 'baseui';
 
 export default function Footer() {
+  const [css, theme] = useStyletron()
+
   return (
-    <>
-      <footer className={styles.footer}>
-        Made with <img src="/netliheart.svg" alt="Netlify Logo" className={styles.logo} /> for you
+    <div className={css({maxWidth: "750px", margin: "auto"})}>
+      <hr></hr>
+      <footer className={css({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      })}>  
+        <div>E-mail: mengzhen@uchicago.edu</div><div>copyrigh@2021</div>
       </footer>
-    </>
+    </div>
   )
 }
